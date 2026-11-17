@@ -1,0 +1,37 @@
+밥상위의 신호 (Bapsang Signal)
+Copyright 2026 춘천남부노인복지관 (사단법인 동부디아코니아)
+Chuncheon Nambu Senior Welfare Center
+
+이 저장소의 소스코드는 Apache License 2.0(LICENSE 파일)으로,
+문서·프롬프트는 CC BY 4.0(https://creativecommons.org/licenses/by/4.0/)으로 공개합니다.
+범위는 README.md 맨 끝 「라이선스」 절을 보십시오.
+
+다음은 위 라이선스 대상이 아닙니다.
+  - 기관 로고·상징(public/brand/ccnoin-logo.png, public/brand/ccnoin-mark.png)과
+    기관명은 춘천남부노인복지관의 표지입니다. 다른 기관은 자기 기관의 것으로 바꿔 쓰십시오.
+
+이 저장소의 현재 파일에는 어르신 개인정보가 포함되어 있지 않습니다. 코드와 문서만 있습니다.
+다른 기관이 가져다 쓰실 때는 각 기관의 자료로 새로 채우셔야 하며, 판정 상수
+(기준선 60 운영일·겨울 보정 등)는 그 기관 자료로 다시 검증하고 쓰시기를 권합니다.
+
+----------------------------------------------------------------------
+이 저장소가 사용하거나 포함하는 제3자 구성요소
+----------------------------------------------------------------------
+
+SheetJS (xlsx) — 엑셀 파일 읽기(앱 내부, public/downloads/encom-meal-extractor.html)
+  Copyright (C) 2012-present SheetJS LLC
+  Apache License 2.0 — https://sheetjs.com / https://git.sheetjs.com/sheetjs/sheetjs
+
+shadcn/ui — 화면 구성 요소(src/components/ui/*)를 이 저장소에 복사해 고쳐 씀
+  Copyright (c) 2023 shadcn
+  MIT License — https://github.com/shadcn-ui/ui
+
+Pretendard — 한국어 화면 서체(외부 CDN에서 불러옴, 저장소에 포함하지 않음)
+  Copyright (c) 2021, Kil Hyung-jin
+  SIL Open Font License 1.1 — https://github.com/orioncactus/pretendard
+
+Open-Meteo — 과거 기상 관측값(결석 사유 설명)
+  Weather data by Open-Meteo.com — https://open-meteo.com
+  CC BY 4.0. 비상업 이용 조건은 Open-Meteo 이용약관을 따르십시오.
+
+그 밖의 npm 의존성은 package.json·bun.lock 에 적힌 각 패키지의 라이선스를 따릅니다.

@@ -1,0 +1,18 @@
+node_modules
+dist
+.output
+.vinxi
+pnpm-lock.yaml
+package-lock.json
+bun.lock
+routeTree.gen.ts
+
+# 제출 문서 — 팀이 쓴 원본 서식을 지킵니다 (표 정렬이 매번 바뀌면 원본 파일과 갈라집니다)
+README.md
+
+# 내려받게 하려고 앱에 넣어 둔 파일들 — 만든 그대로 나가야 합니다.
+#
+# prettier 가 추출 도구 HTML(80만 자)을 다시 들여쓰기 하는 바람에 배포되는 파일이 팀이
+# 만든 원본과 52만 자나 달라져 있었습니다. 동작은 같지만, 내려받은 파일이 만든 파일과
+# 다르면 「내가 준 게 이게 맞나」를 확인할 길이 없습니다.
+public/downloads/

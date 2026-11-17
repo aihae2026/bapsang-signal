@@ -1,0 +1,204 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system definition.
+ *
+ * The @theme inline block maps CSS custom properties to Tailwind utility
+ * classes (e.g. --color-primary -> bg-primary, text-primary).
+ *
+ * The :root and .dark blocks define the actual color values using oklch.
+ * All colors MUST use oklch format.
+ *
+ * To add a new semantic color:
+ * 1. Add the variable to :root (light value) and .dark (dark value)
+ * 2. Register it in @theme inline as --color-<name>: var(--<name>)
+ */
+
+@theme inline {
+  --font-sans:
+    "Pretendard Variable", Pretendard, ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+/* 어르신 돌봄 서비스라 차가운 청색 대신 따뜻한 흙색 계열로 맞췄습니다(굿네이버스 팔레트 참고).
+   강조색은 짙은 이끼색 하나만 쓰고, 빨강·주황은 위험등급 표시 전용으로 남겨둡니다.
+   회색 계열도 전부 미세하게 노란기를 넣어 서체·배경과 톤이 맞게 했습니다. */
+:root {
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.27 0.006 90);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.27 0.006 90);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.27 0.006 90);
+  --primary: oklch(0.47 0.085 122);
+  --primary-foreground: oklch(0.99 0.004 106);
+  --secondary: oklch(0.968 0.005 95);
+  --secondary-foreground: oklch(0.32 0.02 100);
+  --muted: oklch(0.968 0.005 95);
+  --muted-foreground: oklch(0.552 0.014 90);
+  --accent: oklch(0.958 0.008 95);
+  --accent-foreground: oklch(0.32 0.02 100);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(0.916 0.007 90);
+  --input: oklch(0.916 0.007 90);
+  --ring: oklch(0.6 0.06 122);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.984 0.003 247.858);
+  --sidebar-foreground: oklch(0.129 0.042 264.695);
+  --sidebar-primary: oklch(0.208 0.042 265.755);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.968 0.007 247.896);
+  --sidebar-accent-foreground: oklch(0.208 0.042 265.755);
+  --sidebar-border: oklch(0.929 0.013 255.508);
+  --sidebar-ring: oklch(0.704 0.04 256.788);
+}
+
+.dark {
+  --background: oklch(0.129 0.042 264.695);
+  --foreground: oklch(0.984 0.003 247.858);
+  --card: oklch(0.208 0.042 265.755);
+  --card-foreground: oklch(0.984 0.003 247.858);
+  --popover: oklch(0.208 0.042 265.755);
+  --popover-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.929 0.013 255.508);
+  --primary-foreground: oklch(0.208 0.042 265.755);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --muted: oklch(0.279 0.041 260.031);
+  --muted-foreground: oklch(0.704 0.04 256.788);
+  --accent: oklch(0.279 0.041 260.031);
+  --accent-foreground: oklch(0.984 0.003 247.858);
+  --destructive: oklch(0.704 0.191 22.216);
+  --destructive-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+  --chart-1: oklch(0.488 0.243 264.376);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.208 0.042 265.755);
+  --sidebar-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-primary: oklch(0.488 0.243 264.376);
+  --sidebar-primary-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-accent: oklch(0.279 0.041 260.031);
+  --sidebar-accent-foreground: oklch(0.984 0.003 247.858);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+}
+
+/* 대시보드 배경의 신호선 — 선을 짧은 조각으로 만들어 왼쪽에서 오른쪽으로 훑고
+   지나가게 합니다(모니터의 선이 지나가는 모습). 대시보드는 오래 켜 두는 화면이라
+   눈에 걸리지 않을 만큼 느리게 돌립니다.
+
+   숫자는 경로 길이에 맞춰야 합니다. 배경 신호선은 밥 무덤 위로 솟았다 내려오는 모양이라
+   길이가 약 268이고, 보이는 조각 75 + 빈 구간 214 = 한 바퀴 289로 잡았습니다. 경로를
+   바꿀 때 이 값을 같이 안 고치면 선이 한참 사라졌다 나타납니다. */
+@keyframes heartbeat-sweep {
+  from {
+    stroke-dashoffset: 289;
+  }
+  to {
+    stroke-dashoffset: -289;
+  }
+}
+
+.heartbeat-line {
+  stroke-dasharray: 75 214;
+  animation: heartbeat-sweep 5s linear infinite;
+}
+
+/* 동작 최소화를 켠 사용자에게는 선을 세워 둡니다. */
+@media (prefers-reduced-motion: reduce) {
+  .heartbeat-line {
+    animation: none;
+    stroke-dasharray: none;
+  }
+}
+
+/* 「말로 입력하기」 버튼 — 이 도구에서 가장 중요한 입력 통로입니다. 메모가 쌓이지 않으면
+   자연어 해석 단계가 아예 작동하지 않으므로, 눈이 먼저 가야 합니다.
+   숨 쉬듯 아주 느리고 옅게만 번지게 했습니다. 빠르거나 진하면 오래 켜 두는 화면에서
+   거슬립니다. */
+@keyframes voice-cta-breathe {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 oklch(0.47 0.085 122 / 0.22);
+  }
+  50% {
+    box-shadow: 0 0 0 7px oklch(0.47 0.085 122 / 0);
+  }
+}
+
+.voice-cta {
+  animation: voice-cta-breathe 3.2s ease-in-out infinite;
+}
+
+/* 동작 최소화를 켠 사용자에게는 번짐을 멈춥니다. 테두리와 색만으로도 충분히 눈에 띕니다. */
+@media (prefers-reduced-motion: reduce) {
+  .voice-cta {
+    animation: none;
+  }
+}

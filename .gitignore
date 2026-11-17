@@ -1,0 +1,88 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+.output
+.vinxi
+.tanstack/**
+.nitro
+*.local
+
+# Environment variables (Supabase keys 등 비밀값)
+.env
+.env.*
+!.env.example
+
+# 시드용 개인정보 스냅샷 (목업이지만 커밋 대상에서 제외)
+supabase/seed-data.json
+
+# Wrangler / Cloudflare
+.wrangler/
+.dev.vars
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ── 실제 어르신 자료는 절대 저장소에 들어가면 안 됩니다 ──────────
+# 변환한 CSV에는 396명의 회원번호와 출결 기록이 들어 있습니다. 한 번 커밋되면 과거
+# 이력에 영구히 남아, 파일을 지워도 git 히스토리에서 계속 꺼낼 수 있습니다.
+*.csv
+*.xls
+*.xlsx
+*.xlsm
+# 딱 하나 예외 — 어르신 자료가 전혀 없는 빈 입력 양식입니다(머리글 + 예시 한 줄).
+# 앱과 함께 배포되어야 자료 관리 화면에서 내려받을 수 있습니다.
+!public/downloads/data-template.xlsx
+식사 데이터/
+출결데이터/
+
+# 붙여넣기용 생성 SQL — 실제 회원번호가 들어 있습니다. 커밋 금지.
+_*.sql
+supabase/_*.sql
+
+# 파이썬 스크립트 부산물
+__pycache__/
+*.pyc
+
+# Supabase CLI 임시 파일
+supabase/.temp/
+
+# 녹음·영상은 기본 차단 — 회의 녹음을 잠깐 여기 두고 `git add .` 하면 그대로 커밋됩니다.
+# 사이트에 쓰는 공개 자산만 public/ 아래에서 예외로 둡니다.
+*.m4a
+*.mp4
+*.mov
+*.wav
+*.mp3
+!public/**/*.mp4
+
+# 내부 운영 문서 — 어떤 보안 설정을 걸었는지 적어 둔 것이라 저장소에 두지 않습니다.
+보안-비밀번호-서버설정.md
+
+# ── 복지관 실무에서 어르신 자료가 가장 흔히 도는 형식 ──────────────
+#   한글 문서·PDF 로 명단과 상담기록이 오갑니다. 안드로이드 통화 녹음은 .amr 입니다.
+#   한 번 커밋되면 이력에서 지우기 어려우니 여기서 막습니다.
+*.hwp
+*.hwpx
+*.pdf
+*.zip
+*.amr
+*.3gp
+*.webm
+*.aac
